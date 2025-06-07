@@ -48,6 +48,7 @@ async function updateExchangeRate(){
     let data=await response.json();
     let rate = data.conversion_rate;
     let finalAmount = amtVal * rate;
+    finalAmount=finalAmount.toFixed(4);
 
     msg.innerHTML=`${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
 }
